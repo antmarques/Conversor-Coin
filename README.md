@@ -21,4 +21,4 @@ No futuro irei consumir uma API, para obter o valor das cotações atuais.</p>
 </p>
 
 # Pessoas-Desenvolvedoras-do-Projeto
-<p><img src="https://github.com/antoniosg768" width="115"><br><sub>Antonio Carlos</sub></p>
+<p>Antonio Carlos</p>
