@@ -1,7 +1,7 @@
-<h1 aligh="center">Coin Conversor &#x1F4B2;</h1>
+<h1 align="center">Coin Conversor &#x1F4B2;</h1>
 
 # Badges
-<p aligh="center">
+<p>
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
@@ -13,12 +13,12 @@ No futuro irei consumir uma API, para obter o valor das cotações atuais.</p>
 # 📁 Acesso ao projeto
 <p>Para acessar o projeto, precisamos ter um editor de código(Recomendo o VSCode + o pack de extensões do java) e o java JDK/JRE para que a janela de interface seja acionada no momento de rodar o programa. Para baixar a JRE é só acessar esse site: https://www.oracle.com/br/java/technologies/downloads/#jdk17-windows</p>
 <p>Para baixar o VSCode: https://code.visualstudio.com/download</p>
-<p aligh="center">
+<p>
     <img src="Print_java.png">
 </p>
-<p aligh="center">
+<p>
     <img src="javajre.png">
 </p>
 
 # Pessoas-Desenvolvedoras-do-Projeto
-<p>Antonio Carlos</p>
+<p><img src="https://github.com/antoniosg768" width="115"><br><sub>Antonio Carlos</sub></p>

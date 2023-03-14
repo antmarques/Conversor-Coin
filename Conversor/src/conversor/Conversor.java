@@ -8,6 +8,7 @@ public class Conversor {
 
     public static void main(String[] args) {
         ValidacaoEntrada valida = new ValidacaoEntrada();
+
         String[] options = {"Dollar para Real", "Euro para Real", "Libras "
         + "Esterlinas para Real", "Peso Argentino para Real", 
         "Peso Chileno para Real", "Real para Dollar", "Real para Euro", 
@@ -15,18 +16,34 @@ public class Conversor {
         "Real para Peso Chileno"};
         String escolha = (String) JOptionPane.showInputDialog(null, 
                 "Escolha a moeda para a qual você deseja converter:", 
-                "Moedas", -1, null, options, 
-                args);
+                "Moedas", -1, null, options, args);
+        if (escolha == null) {
+            while (escolha == null) {
+                escolha = (String) JOptionPane.showInputDialog(null, 
+                        "Escolha uma moeda válida para a qual você deseja "
+                        + "converter:", "Moedas", -1, null, options, args);
+                if (escolha == null) {
+                    System.exit(0);
+                }
+            }
+        }
+
+        String entrada = JOptionPane.showInputDialog("Informe um valor monetário:");
         
-        String entrada = JOptionPane.showInputDialog("Informe um valor:"); 
-        while (!valida.validaEntrada(entrada) && entrada != null) { //Valida a entrada do valor. 
+        while (!valida.validaEntrada(entrada) && entrada != null) { //Valida a entrada do valor.
             entrada = JOptionPane.showInputDialog("Informe um valor "
                     + "monetário valido:");
             if (entrada == null) {
-                break;
+                int request = JOptionPane.showConfirmDialog(null, "Deseja tentar novamente?");
+                if (request == JOptionPane.YES_OPTION) {
+                    main(args);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Muito Obrigado, Volte Sempre!");
+                    System.exit(0);
+                }
             }
         }
-        
+
         double valorInserido = Double.parseDouble(entrada);
         double valorConverter = 0;
         
@@ -115,8 +132,8 @@ public class Conversor {
         if (pergunta == JOptionPane.YES_OPTION) {
             main(args);
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Muito Obrigado, Volte Sempre!");
+            JOptionPane.showMessageDialog(null, "Muito Obrigado, Volte Sempre!");
+            System.exit(0);
         }
     }
 }
