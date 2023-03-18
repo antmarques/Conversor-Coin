@@ -18,9 +18,9 @@ import java.time.temporal.ChronoUnit;
 public class ClientEconomic {
 
     String endpoint = "https://economia.awesomeapi.com.br/last/";
-    String moedasParam = "USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,GBP-BRL,BRL-GBP,ARS-BRL,ARS-BRL,CLP-BRL,BRL-CLP";
+    String moedasParam = "USD-BRL,BRL-USD,EUR-BRL,BRL-EUR,GBP-BRL,BRL-GBP,ARS-BRL,BRL-ARS,CLP-BRL,BRL-CLP";
 
-    private String getMoedas() {
+    private String atualizarCambio() {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(endpoint.concat(moedasParam)))
@@ -37,12 +37,12 @@ public class ClientEconomic {
         }
     }
 
-    public Moedas atualizarCambio() {
+    public Moedas getMoedas() {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());
             mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-            return mapper.readValue(getMoedas(), Moedas.class);
+            return mapper.readValue(atualizarCambio(), Moedas.class);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
