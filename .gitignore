@@ -6,3 +6,6 @@
 /ConversorTemp/build/
 /Teste/nbproject/private/
 /Teste/build/
+target
+.idea
+Conversor-Coin.iml

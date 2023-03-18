@@ -1,5 +1,7 @@
 package conversor;
 
+import client.ClientEconomic;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
@@ -44,82 +46,64 @@ public class Conversor {
             }
         }
 
-        double valorInserido = Double.parseDouble(entrada);
+        double valorInserido = Double.parseDouble(entrada.replaceAll(",","."));
         double valorConverter = 0;
         
         NumberFormat valorFormatado = new DecimalFormat("#0.00");
         String msgFinal = "";
+
+        Moedas moedas = new ClientEconomic().getMoedas();
         
         switch (escolha) {
             case "Dollar para Real":
                 System.out.println("Opção 1: " + valorInserido);
-                DollarReal valorDollarReal = new DollarReal();
-                valorConverter = valorDollarReal.getDollarReal(valorInserido);
-                msgFinal = "Valor Convertido: R$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getDolarParaReal().getBid();
+                msgFinal = "Valor Convertido: R$" + valorFormatado.format(valorConverter);
                 break;
             case "Euro para Real":
                 System.out.println("Opção 2: " + valorInserido);
-                EuroReal valorEuroReal = new EuroReal();
-                valorConverter = valorEuroReal.getEuroReal(valorInserido);
-                msgFinal = "Valor Convertido: R$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getEuroParaReal().getBid();
+                msgFinal = "Valor Convertido: R$" + valorFormatado.format(valorConverter);
                 break;
             case "Libras Esterlinas para Real":
                 System.out.println("Opção 3: " + valorInserido);
-                LibraReal valorLibraReal = new LibraReal();
-                valorConverter = valorLibraReal.getLibraReal(valorInserido);
-                msgFinal = "Valor Convertido: R$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getLibraParaReal().getBid();
+                msgFinal = "Valor Convertido: R$" + valorFormatado.format(valorConverter);
                 break;
             case "Peso Argentino para Real":
                 System.out.println("Opção 4: " + valorInserido);
-                PesoArgReal valorPesoArgReal = new PesoArgReal();
-                valorConverter = valorPesoArgReal.getPesoArgReal(valorInserido);
-                msgFinal = "Valor Convertido: R$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getPesoArgParaReal().getBid();
+                msgFinal = "Valor Convertido: R$" + valorFormatado.format(valorConverter);
                 break;
             case "Peso Chileno para Real":
                 System.out.println("Opção 5: " + valorInserido);
-                PesoChiReal valorPesoChiReal = new PesoChiReal();
-                valorConverter = valorPesoChiReal.getPesoChiReal(valorInserido);
-                msgFinal = "Valor Convertido: R$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getPesoChiParaReal().getBid();
+                msgFinal = "Valor Convertido: R$" + valorFormatado.format(valorConverter);
                 break;
             case "Real para Dollar":
                 System.out.println("Opção 6: " + valorInserido);
-                RealDollar valorRealDollar = new RealDollar(); 
-                valorConverter = valorRealDollar.getRealDollar(valorInserido);
-                msgFinal = "Valor Convertido: US$" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getRealParaDolar().getBid();
+                msgFinal = "Valor Convertido: US$" + valorFormatado.format(valorConverter);
                 break;
             case "Real para Euro":
                 System.out.println("Opção 7: " + valorInserido);
-                RealEuro valorRealEuro = new RealEuro();
-                valorConverter = valorRealEuro.getRealEuro(valorInserido);
-                msgFinal = "Valor Convertido: €" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getRealParaEuro().getBid();
+                msgFinal = "Valor Convertido: €" + valorFormatado.format(valorConverter);
                 break;
             case "Real para Libras Esterlinas":
                 System.out.println("Opção 8: " + valorInserido);
-                RealLibra valorRealLibra = new RealLibra();
-                valorConverter = valorRealLibra.getRealLibra(valorInserido);
-                msgFinal = "Valor Convertido: $" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getRealParaLibra().getBid();
+                msgFinal = "Valor Convertido: $" + valorFormatado.format(valorConverter);
                 break;
             case "Real para Peso Argentino":
                 System.out.println("Opção 9: " + valorInserido);
-                RealPesoArg valorRealPesoArg = new RealPesoArg();
-                valorConverter = valorRealPesoArg.getRealPesoArg(valorInserido);
-                msgFinal = "Valor Convertido: $" + valorFormatado.format
-                (valorConverter); 
+                valorConverter = valorInserido * moedas.getRealParaPesoArg().getBid();
+                msgFinal = "Valor Convertido: $" + valorFormatado.format(valorConverter);
                 break;
             case "Real para Peso Chileno":
                 System.out.println("Opção 10: " + valorInserido);
-                RealPesoChi valorRealPesoChi = new RealPesoChi();
-                valorConverter = valorRealPesoChi.getRealPesoChi(valorInserido);
-                msgFinal = "Valor Convertido: CLP" + valorFormatado.format
-                (valorConverter);
+                valorConverter = valorInserido * moedas.getRealParaPesoChi().getBid();
+                msgFinal = "Valor Convertido: CLP" + valorFormatado.format(valorConverter);
                 break;
             default:
                 msgFinal = "Opção inválida!";
