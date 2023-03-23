@@ -1,8 +1,8 @@
 package client;
 
 import conversor.Moedas;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 class ClientEconomicTest {
 
@@ -10,7 +10,7 @@ class ClientEconomicTest {
     public void test() {
         ClientEconomic client = new ClientEconomic();
         try {
-            Assertions.assertInstanceOf(Moedas.class, client.getMoedas());
+            Assertions.assertInstanceOf(Moedas.class, client.getMoedas(client.endpoint));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

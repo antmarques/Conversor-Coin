@@ -37,7 +37,7 @@ public class ClientEconomic {
         }
     }
 
-    public Moedas getMoedas() {
+    public Moedas getMoedas(String moedasParam) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.registerModule(new JavaTimeModule());
