@@ -1,7 +1,6 @@
 package conversor;
 
 import client.ClientEconomic;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import javax.swing.JOptionPane;
