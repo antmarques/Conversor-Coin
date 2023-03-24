@@ -2,8 +2,8 @@
 
 # &#x1F587;&#xFE0F; Badges
 <p>
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-<img src=imgs/java.png width=100px>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge">
+<img src=imgs/java.png width=200px>
 </p>
 
 # &#x270F;&#xFE0F; Descrição-do-Projeto
@@ -14,13 +14,13 @@ Desenvolvemos uma classe para consumir uma API tornando a cotação dinâmica, a
 
 # 	&#x1F528; Funcionalidades (em imagens)
 <p><strong>Tela inicial onde escolhemos de qual moeda queremos converter:</strong><br>
-<img src=imgs/telainicial.png></p>
+<img src=imgs/telainicial.png><br></p>
 <p><strong>Tela valor onde dizemos o valor que queremos converter:</strong><br>
-<img src=imgs/telavalor.png></p>
+<img src=imgs/telavalor.png><br></p>
 <p><strong>Tela convertido mostra o resultado da conversão e espera a confirmação do usuário para avançar para a próxima tela:</strong><br>
-<img src=imgs/telaconvertido.png></p>
+<img src=imgs/telaconvertido.png><br></p>
 <p><strong>Tela repete pergunta se o usuário quer tentar novamente, se sim, ele retorna para as opções de moedas, se não, ele mostra uma tela de agradecimento:</strong><br>
-<img src=imgs/telarepete.png></p>
+<img src=imgs/telarepete.png><br></p>
 <p><strong>Tela final onde mostra a mensagem citada na funcionalidade anterior:</strong><br>
 <img src=imgs/telafinal.png></p>
 
@@ -36,4 +36,4 @@ Desenvolvemos uma classe para consumir uma API tornando a cotação dinâmica, a
 
 # &#x1F468;&#x200D;&#x1F4BB; Pessoas-Desenvolvedoras-do-Projeto
 <p>Antonio Carlos</p>
-<p><a src=https://github.com/CassioLaurentino>Cassio Laurentino</a></p>
+<p>Cassio Laurentino -> https://github.com/CassioLaurentino</p>
